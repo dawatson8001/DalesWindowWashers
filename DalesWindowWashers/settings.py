@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'DalesWindowWasher_app',
+    'Comments_app',
 ]
 
 MIDDLEWARE = [
