@@ -14,5 +14,12 @@ def post_list(request):
 
 
 def new_post(request):
+
+    post = get_object_or_404(Post, pk=user_id)
     form = CommentPostForm()
+    if request.method == "POST":
+        comment_form = CommentPostForm(request.POST, instance=post)
+        if comment_form.is_valid():
+            comment = comment_form.save(False)
+            comment.save()
     return render(request, 'commentspostform.html', {'form': form})

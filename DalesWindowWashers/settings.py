@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Comments_app',
     'django_forms_bootstrap',
+    'Accounts_app'
 ]
 
 MIDDLEWARE = [

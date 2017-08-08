@@ -8,11 +8,15 @@
             <article>
                 <table>
                     {% for post in posts %}
-                        <tr>{{ post.content }}</tr>
-                        <tr>Left by: </tr>
-                        <tr>{{ post.author }}</tr>
-                        <tr>Posted: </tr>
-                        <tr>{{ post.created_date }}</tr>
+                        <tr>
+                            <th>{{ post.content }}</th>
+                        </tr>
+                        <tr>
+                            <th>{{ post.author }}</th>
+                        </tr>
+                        <tr>
+                            <th>{{ post.created_date }}</th>
+                        </tr>
                     {% endfor %}
                 </table>
             </article>
