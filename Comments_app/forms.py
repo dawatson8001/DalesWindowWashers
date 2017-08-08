@@ -5,4 +5,4 @@ class CommentPostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('content', 'author', 'created_date')
+        fields = ('content',)
