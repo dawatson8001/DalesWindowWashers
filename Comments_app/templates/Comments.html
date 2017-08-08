@@ -1,18 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% for post in posts %}
+    <article>
+        <h1>Customer Comments</h1>
+    </article>
         <section class="col-xs-12">
             <article>
                 <table>
-                    <tr></tr>Content</tr>
-                    <tr>{{ post.content }}</tr>
-                    <tr>Author</tr>
-                    <tr>{{ post.author }}</tr>
-                    <tr>Submitted</tr>
-                    <tr>{{ post.created_date }}</tr>
+                    {% for post in posts %}
+                        <tr>{{ post.content }}</tr>
+                        <tr>Left by: </tr>
+                        <tr>{{ post.author }}</tr>
+                        <tr>Posted: </tr>
+                        <tr>{{ post.created_date }}</tr>
+                    {% endfor %}
                 </table>
             </article>
         </section>
-    {% endfor %}
 {% endblock %}
