@@ -2,8 +2,8 @@
 
 {% block content %}
     {% for post in posts %}
-        <div>
-            <div>
+        <section class="col-xs-12">
+            <article>
                 <table>
                     <tr></tr>Content</tr>
                     <tr>{{ post.content }}</tr>
@@ -13,7 +13,7 @@
                     <tr>{{ post.created_date }}</tr>
                 </table>
                 {{ post.published_date }}
-            </div>
-        </div>
+            </article>
+        </section>
     {% endfor %}
 {% endblock %}
