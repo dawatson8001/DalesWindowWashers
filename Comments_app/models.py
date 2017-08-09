@@ -10,7 +10,7 @@ class Post(models.Model):
     class Meta:
         app_label = "Comments_app"
 
-    author = models.ForeignKey('auth.User')
+    #author = models.ForeignKey('auth.user')
     type = models.CharField(max_length=20, blank=True, null=True)
     content = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)

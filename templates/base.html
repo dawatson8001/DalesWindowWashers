@@ -12,10 +12,13 @@
 	<section class="container">
         <img src="{%  static "images/Logo1.jpg" %}"/>
 		<nav class="navbar">
-            <a id="menu" href="#">Home</a>
-            <a id="menu" href="#">Account</a>
-            <a id="menu" href="#">About Us</a>
-            <a id="menu" href="#">Comments</a>
+            <li><a id="menu" href="#">Home</a></li>
+            <li><a id="menu" href="#">About Us</a></li>
+            <li><a id="menu" href="#">Comments</a></li>
+            <li><a id="menu" href="{% url 'register' %}">Register</a></li>
+            <li><a id="menu" href="#">Log In</a></li>
+            <li><a id="menu" href="#">Log Out</a></li>
+
 		</nav>
     </section>
 

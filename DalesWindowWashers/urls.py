@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from Accounts_app import views as accounts_views
+
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'', include('Comments_app.urls')),
+    url(r'^register/$', accounts_views.register, name='register'),
+    url(r'^profile/$', accounts_views.profile, name ='profile'),
 
 ]
