@@ -7,16 +7,26 @@ from django.utils import timezone
 
 
 class AccountUserManager(UserManager):
-    def _create_user(self, username, email, password, is_staff, is_superuser, **extra_fields):
+    def _create_user(self, username, email, password, is_staff, is_superuser, first_name, last_name, **extra_fields):
         now = timezone.now()
         if not email:
             raise ValueError('The given username must be set')
 
         email = self.normalize_email(email)
         user = self.models(username=email, email=email, is_staff=is_staff,
-                          is_active=True, is_superuser=is_superuser,
-                          date_joined=now, **extra_fields)
+                            is_active=True, is_superuser=is_superuser,
+                            date_joined=now, first_name=first_name, last_name=last_name,
+                           **extra_fields)
         user.set_password(password)
+        user.save(using=self.__db)
+
+        return user
+
+    def _update_user(self, username, email, first_name, last_name, **extra_fields):
+
+        email = self.normalize_email(email)
+        user = self.models(username=email, email=email, first_name=first_name,
+                            last_name=last_name, **extra_fields)
         user.save(using=self.__db)
 
         return user
@@ -24,4 +34,5 @@ class AccountUserManager(UserManager):
 
 class User(AbstractUser):
 
+    address1 = ""
     objects = AccountUserManager()

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="container">
+        <article class="col-xs-12">
+            <form role="form" method="post" action="{% url 'account_details' %}">
+                <legend>Update personal details</legend>
+                {% csrf_token %}
+                {{ form }}
+                <section class="form-group">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </section>
+            </form>
+        </article>
+    </section>
+    <section class="container">
+        <article class="col-xs-12">
+            <form role="form" method="post" action="{% url 'account_details' %}">
+                <legend>Payment options</legend>
+                {% csrf_token %}
+                {{ form }}
+                <section class="form-group">
+                    <button type="submit" class="btn btn-primary">Pay</button>
+                </section>
+            </form>
+        </article>
+    </section>
+{% endblock %}

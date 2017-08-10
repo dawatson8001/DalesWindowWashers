@@ -5,12 +5,12 @@ from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.core.urlresolvers import reverse
 from django.template.context_processors import csrf
-from Accounts_app.forms import UserRegistrationForm, UserLoginForm
+from Accounts_app.forms import UserRegistrationForm, UserLoginForm, PersonalDetailsForm
 from django.contrib.auth.decorators import login_required
 
 
 def register(request):
-    if request.method =='POST':
+    if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
@@ -19,7 +19,7 @@ def register(request):
 
             if user:
                 messages.success(request, "You have successfully registered")
-                return redirect(reverse('profile'))
+                return render(request, 'account.html')
 
             else:
                 messages.error(request, "unable to log you in at this time!")
@@ -30,7 +30,7 @@ def register(request):
     args = {'form': form}
     args.update(csrf(request))
 
-    return render(request, 'register.html', args)
+    return render(request, 'Account.html', args)
 
 
 @login_required
@@ -64,3 +64,22 @@ def logout(request):
     auth.logout(request)
     messages.success(request, 'You have successfully logged out')
     return redirect(reverse('index'))
+
+
+@login_required
+def account_details(request):
+    if request.method == 'POST':
+        form = PersonalDetailsForm(request.POST)
+        if form.is_valid():
+            form.save()
+        else:
+            messages.success(request, 'Details updated')
+    else:
+        form = PersonalDetailsForm()
+
+    args = {
+        'form': form,
+    }
+    args.update(csrf(request))
+
+    return render(request, 'Account.html', args)

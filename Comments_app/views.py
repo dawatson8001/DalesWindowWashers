@@ -6,6 +6,7 @@ from django.utils import timezone
 from .models import Post
 from .forms import CommentPostForm
 from django.contrib.auth.decorators import login_required
+from DalesWindowWashers import settings
 
 
 def post_list(request):
