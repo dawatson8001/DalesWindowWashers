@@ -10,17 +10,31 @@
 </head>
 <body>
 	<section class="container">
-        <img src="{%  static "images/Logo1.jpg" %}"/>
-		<nav class="navbar">
-            <li><a id="menu" href="#">Home</a></li>
-            <li><a id="menu" href="#">About Us</a></li>
-            <li><a id="menu" href="#">Comments</a></li>
-            <li><a id="menu" href="{% url 'register' %}">Register</a></li>
-            <li><a id="menu" href="#">Log In</a></li>
-            <li><a id="menu" href="#">Log Out</a></li>
-
-		</nav>
+        <img src="{%  static "images/Logo1.jpg" %}" alt="Dales Window Washers"/>
     </section>
+    <nav class="container">
+        <nav class="navbar navbar-inverse">
+            <ul class="nav navbar-nav">
+ 			    <nav class="nav navbar-header">
+ 				    <a class="navbar-brand" href="#">MENU</a>
+				    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myCollapsingList">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+				    </button>
+			    </nav>
+            </ul>
+            <ul id="myCollapsingList" class="nav navbar-nav navbar-collapse collapse">
+                <li><a id="menu" href="{% url 'index' %}#">Home</a></li>
+                <li><a id="menu" href="{% url 'account' %}">Account</a></li>
+                <li><a id="menu" href="{% url 'aboutus' %}">About Us</a></li>
+                <li><a id="menu" href="{% url 'comments' %}">Comments</a></li>
+                <li><a id="menu" href="{% url 'register' %}">Register</a></li>
+                <li><a id="menu" href="{% url 'login' %}">Log In</a></li>
+                <li><a id="menu" href="{% url 'logout' %}">Log Out</a></li>
+            </ul>
+        </nav>
+    </nav>
 
     {%  block content %}
     {% endblock %}

@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from Accounts_app.models import User
 from django.core.exceptions import ValidationError
 
+
 class UserRegistrationForm(UserCreationForm):
     password1 = forms.CharField(
         label='password',
@@ -21,7 +22,7 @@ class UserRegistrationForm(UserCreationForm):
 
     def clean_password2(self):
         password1 = self.cleaned_data.get('password1')
-        password2 = self.cleaner_data.get('password2')
+        password2 = self.cleaned_data.get('password2')
 
         if password1 and password2 and password1 != password2:
             message = "Passwords do not match"
@@ -38,3 +39,8 @@ class UserRegistrationForm(UserCreationForm):
             instance.save()
 
         return instance
+
+
+class UserLoginForm(forms.Form):
+    email = forms.EmailField()
+    password = forms.CharField(widget=forms.PasswordInput)

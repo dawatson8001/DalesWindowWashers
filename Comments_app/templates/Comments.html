@@ -1,11 +1,10 @@
 {% extends "base.html" %}
-
 {% block content %}
-    <article>
-        <h1>Customer Comments</h1>
-    </article>
-        <section class="col-xs-12">
-            <article>
+    <section class="container">
+        <article class="col-xs-12">
+            <h1>Customer Comments</h1>
+        </article>
+        <article class="col-xs-12">
                 <table>
                     {% for post in posts %}
                         <tr>
@@ -19,6 +18,6 @@
                         </tr>
                     {% endfor %}
                 </table>
-            </article>
-        </section>
+        </article>
+    </section>
 {% endblock %}

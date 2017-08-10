@@ -1,12 +1,12 @@
 		body{
-			background-color: ;
-			background-size: ;
+			background-color: white;
+			background-size: white;
 			font-size: 20px;
 			font-family: "Times New Roman";
 		}
 		img{
-			width: 50%;
-			height: 50%;
+			width: 100%;
+			height: 60%;
 			padding: 20px;
 		}
 		.container {
@@ -21,3 +21,9 @@
         #menu {
             margin: 20px;
         }
+		tr{
+			margin-right: 50px;
+		}
+		p{
+			border-top: 50px;
+		}
