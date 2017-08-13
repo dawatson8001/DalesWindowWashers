@@ -2,7 +2,6 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render, get_object_or_404, redirect
-from django.utils import timezone
 from .models import Post
 from .forms import CommentPostForm
 from django.contrib.auth.decorators import login_required
@@ -13,7 +12,7 @@ from django.core.urlresolvers import reverse
 def post_user_list(request):
 
     posts = Post.objects.order_by('-created_date')
-    return render(request, "usercomments.html", {'posts': posts})
+    return render(request, "usercomments", {'posts': posts})
 
 
 def post_list(request):
@@ -29,9 +28,9 @@ def new_post(request):
         form = CommentPostForm(request.POST)
         if form.is_valid():
             post = form.save(False)
-            post.author = request.user.id
+            post.user = request.user
             post.save()
-            return render(request, 'comments.html')
+            return redirect(post_list)
     else:
         form = CommentPostForm()
     return render(request, 'newcomment.html', {'form': form})
@@ -45,7 +44,7 @@ def edit_post(request, post_id):
         form = CommentPostForm(request.POST, instance=post)
         if form.is_valid():
             form.save()
-            return render(request, 'newcomment.html')
+            return redirect(post_list)
     else:
         form = CommentPostForm(instance=post)
 
@@ -54,5 +53,4 @@ def edit_post(request, post_id):
         'form_action': reverse('edit_post', kwargs={"post_id": post.id})
     }
     args.update(csrf(request))
-    posts = Post.objects.order_by('-created_date')
-    return render(request, 'newcomment.html', args)
+    return redirect(post_list)

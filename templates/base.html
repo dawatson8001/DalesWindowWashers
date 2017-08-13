@@ -26,12 +26,12 @@
             </ul>
             <ul id="myCollapsingList" class="nav navbar-nav navbar-collapse collapse">
                 <li><a id="menu" href="{% url 'index' %}">Home</a></li>
-                <li><a id="menu" href="{% url 'account_details' %}">Account</a></li>
+                {% if user.id != null %}<li><a id="menu" href="{% url 'account_details' %}">Account</a></li>{% endif %}
                 <li><a id="menu" href="{% url 'aboutus' %}">About Us</a></li>
                 <li><a id="menu" href="{% url 'comments' %}">Comments</a></li>
-                <li><a id="menu" href="{% url 'register' %}">Register</a></li>
-                <li><a id="menu" href="{% url 'login' %}">Log In</a></li>
-                <li><a id="menu" href="{% url 'logout' %}">Log Out</a></li>
+                {% if user.id == null %}<li><a id="menu" href="{% url 'register' %}">Register</a></li>{% endif %}
+                {% if user.id == null %}<li><a id="menu" href="{% url 'login' %}">Log In</a></li>{% endif %}
+                {% if user.id != null %}<li><a id="menu" href="{% url 'logout' %}">Log Out</a></li>{% endif %}
             </ul>
         </nav>
         <p>You are logged in as {{ user.email }}</p>
