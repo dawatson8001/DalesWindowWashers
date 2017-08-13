@@ -15,7 +15,7 @@ def register(request):
         if form.is_valid():
             form.save()
 
-            user = auth.authenticate(email=request.POST.get('email'), password=request.POST.get('password1'))
+            user = auth.authenticate(email=request.POST.get('email'), password=request.POST.get('password'))
 
             if user:
                 messages.success(request, "You have successfully registered")
@@ -64,9 +64,12 @@ def logout(request):
 @login_required
 def account_details(request):
     if request.method == 'POST':
-        form = PersonalDetailsForm()
-    else:
         form = PersonalDetailsForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+
+        form = PersonalDetailsForm()
 
     args = {
         'form': form,
