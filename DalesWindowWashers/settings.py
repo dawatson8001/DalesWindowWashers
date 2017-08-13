@@ -25,7 +25,7 @@ SECRET_KEY = 'y&)wtg2ydn&rnu^3d^$no)d!wbzs3)31mo1f*c%@fk97im5=%s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "herokuapp.com"]
 
 
 # Application definition
@@ -43,13 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'django_framework',
     'Comments_app',
     'django_forms_bootstrap',
     'Accounts_app',
     'emoticons',
     'tinymce',
     'disqus'
+    'cores-headers',
 ]
 
 MIDDLEWARE = [
@@ -60,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'DalesWindowWashers.urls'
@@ -94,6 +95,12 @@ DATABASES = {
     }
 }
 
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8080',
+    'http://127.0.0.1:8080',
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -135,6 +142,9 @@ USE_TZ = True
 AUTH_USER_MODEL = 'Accounts_app.User'
 
 TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", 'js', 'tinymce', 'tinymce.min.js')
+
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
