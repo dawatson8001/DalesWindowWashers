@@ -34,5 +34,4 @@ class AccountUserManager(UserManager):
 
 class User(AbstractUser):
 
-    address1 = ""
     objects = AccountUserManager()

@@ -6,7 +6,7 @@ def index(request):
 
 
 def account(request):
-    return render(request, 'Account.html')
+    return render(request, 'account.html')
 
 
 def aboutus(request):

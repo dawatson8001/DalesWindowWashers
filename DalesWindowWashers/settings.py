@@ -42,9 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'Comments_app',
     'django_forms_bootstrap',
-    'Accounts_app'
+    'Accounts_app',
+    'emoticons',
+    'tinymce',
+    'disqus'
 ]
 
 MIDDLEWARE = [
@@ -128,6 +132,8 @@ USE_L10N = True
 USE_TZ = True
 
 AUTH_USER_MODEL = 'Accounts_app.User'
+
+TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", 'js', 'tinymce', 'tinymce.min.js')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
