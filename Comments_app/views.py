@@ -7,6 +7,7 @@ from .forms import CommentPostForm
 from django.contrib.auth.decorators import login_required
 from django.template.context_processors import csrf
 from django.core.urlresolvers import reverse
+from django.utils import timezone
 
 
 def post_user_list(request):
@@ -22,7 +23,7 @@ def post_list(request):
 
 
 @login_required
-def new_post(request):
+def new_comment(request):
 
     if request.method == "POST":
         form = CommentPostForm(request.POST)
@@ -37,20 +38,24 @@ def new_post(request):
 
 
 @login_required
-def edit_post(request, post_id):
+def edit_comment(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
-
     if request.method == "POST":
-        form = CommentPostForm(request.POST, instance=post)
+        form = CommentPostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
-            form.save()
-            return redirect(post_list)
+            post = form.save(commit=False)
+            post.author = request.user
+            post.created_date = timezone.now()
+            post.save()
+            return redirect(post_user_list)
     else:
         form = CommentPostForm(instance=post)
+    return render(request, 'usercommentedit.html', {'form': form})
 
-    args = {
-        'form': form,
-        'form_action': reverse('edit_post', kwargs={"post_id": post.id})
-    }
-    args.update(csrf(request))
-    return redirect(post_list)
+
+@login_required
+def delete_comment(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    post.delete()
+
+    return redirect(post_user_list)

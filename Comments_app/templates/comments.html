@@ -3,7 +3,7 @@
 {% block content %}
     <section class="container">
         {% if user.id != null %}
-            <th><a href="{% url 'new_post' %}">
+            <th><a href="{% url 'new_comment' %}">
                 <button type="submit" class="btn btn-info">New Post</button>
             </a></th>
         {% endif %}

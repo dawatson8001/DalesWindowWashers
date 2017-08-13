@@ -1,8 +1,5 @@
 {% extends "base.html" %}
-{% block head_js %}
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-    <script>tinyMCE.init({mode: "textareas", theme: 'modern', plugins: 'paste'})</script>
-{% endblock head_js %}
+
 {% block content %}
     {% load bootstrap_tags %}
     <section class="container">
@@ -16,9 +13,14 @@
                         {% if post.user_id == user.id %}
                             <tr>
                                 <th>{{ post.content }}</th>
-                                    <th><a href="{% url 'edit_post' post.id %}">
-                                        <button type="submit" class="btn btn-info">Save</button>
+                                {% if post.user == user %}
+                                    <th><a href="{% url 'edit_comment' post.id %}">
+                                        <button type="submit" class="btn btn-info">Edit</button>
                                     </a></th>
+                                    <th><a href="{% url 'delete_comment' post.id %}">
+                                        <button type="submit" class="btn btn-info">Delete</button>
+                                    </a></th>
+                                {% endif %}
                             </tr>
                             <tr>
                                 <th>{{ post.user }}</th>
