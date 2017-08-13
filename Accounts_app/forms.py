@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from Accounts_app.models import User
 from django.core.exceptions import ValidationError
+from django.contrib import auth
 
 
 class UserRegistrationForm(UserCreationForm):
@@ -49,7 +50,7 @@ class UserLoginForm(forms.Form):
 
 
 class PersonalDetailsForm(forms.Form):
-    email = forms.EmailField(label='Email')
+    email = forms.CharField(label='Email')
     first_name = forms.CharField(label='Forename')
     last_name = forms.CharField(label='Surname')
 

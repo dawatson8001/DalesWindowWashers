@@ -64,12 +64,9 @@ def logout(request):
 @login_required
 def account_details(request):
     if request.method == 'POST':
-        form = PersonalDetailsForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Details updated')
-    else:
         form = PersonalDetailsForm()
+    else:
+        form = PersonalDetailsForm(request.POST)
 
     args = {
         'form': form,

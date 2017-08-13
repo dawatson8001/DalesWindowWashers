@@ -3,14 +3,18 @@
 {% block content %}
     <section class="container">
         <article class="col-xs-12">
-            <form role="form" method="post" action="{% url 'account_details' %}">
-                <legend>Update personal details</legend>
-                {% csrf_token %}
-                {{ form| as_bootstrap}}
-                <section class="form-group">
-                    <button type="submit" class="btn btn-primary">Update</button>
-                </section>
-            </form>
+                <legend>Personal details</legend>
+            <table>
+                    <tr>
+                        <th>Email address:{{ user.email }}</th>
+                    </tr>
+                    <tr>
+                        <th>First name:{{ user.first_name }}</th>
+                    </tr>
+                    <tr>
+                        <th>Last name:{{ user.last_name }}</th>
+                    </tr>
+            </table>
         </article>
     </section>
     <section class="container">
@@ -20,7 +24,7 @@
     </section>
     <section class="container">
         <article class="col-xs-12">
-            <form role="form" method="post" action="{% url 'account_details' %}">
+            <form role="form" method="GET" action="{% url 'account_details' %}">
                 <legend>Payment options</legend>
                 {% csrf_token %}
                 {{ form| as_bootstrap}}
