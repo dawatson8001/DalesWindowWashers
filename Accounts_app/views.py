@@ -19,7 +19,7 @@ def register(request):
 
             if user:
                 messages.success(request, "You have successfully registered")
-                return render(request, 'account.html')
+                return render(request, 'account.html', {'form': form})
 
             else:
                 messages.error(request, "unable to log you in at this time!")
@@ -31,6 +31,7 @@ def register(request):
     args.update(csrf(request))
 
     return render(request, 'register.html', args)
+
 
 def login(request):
     if request.method == 'POST':
@@ -66,7 +67,6 @@ def account_details(request):
         form = PersonalDetailsForm(request.POST)
         if form.is_valid():
             form.save()
-        else:
             messages.success(request, 'Details updated')
     else:
         form = PersonalDetailsForm()
