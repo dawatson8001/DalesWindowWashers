@@ -27,5 +27,4 @@ urlpatterns = [
     url(r'', include('Accounts_app.urls')),
 
 
-
 ]

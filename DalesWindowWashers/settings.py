@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'Comments_app',
     'django_forms_bootstrap',
+    'stripe',
     'Accounts_app',
     'emoticons',
     'tinymce',
@@ -93,6 +94,9 @@ DATABASES = {
     }
 }
 
+# Stripe environment variables
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', 'pk_test_ouVQ9KENU9DAplktRQukCPNY')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'sk_test_Jmv6dpQ3pZ5XPnmOAkaVt4Dg')
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -116,7 +120,6 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'Accounts_app.backends.EmailAuth',
 )
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/

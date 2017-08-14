@@ -7,9 +7,13 @@ from django.core.urlresolvers import reverse
 from django.template.context_processors import csrf
 from Accounts_app.forms import UserRegistrationForm, UserLoginForm, PersonalDetailsForm
 from django.contrib.auth.decorators import login_required
+from .models import User
 
 
 def register(request):
+    if User.objects.filter(username=request.username).exists():
+        messages.error(request, "Email already in use!")
+        return render(request, 'register.html')
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
