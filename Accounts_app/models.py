@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.utils import timezone
+from django.db import models
 
 
 class AccountUserManager(UserManager):
@@ -12,7 +13,7 @@ class AccountUserManager(UserManager):
             raise ValueError('The given username must be set')
 
         email = self.normalize_email(email)
-        user = self.models(username=email, email=email, is_staff=is_staff,
+        user = self.model(username=email, email=email, is_staff=is_staff,
                            is_active=True, is_superuser=is_superuser,
                            date_joined=now, first_name=first_name, last_name=last_name,
                            **extra_fields)

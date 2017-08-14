@@ -21,6 +21,7 @@
 - Allow users to leave comments on the website for others to see
 - Email company with any queries
 - Display's company logo and information
+- Time indicator on all screens
 
 ### Features left to implement
 

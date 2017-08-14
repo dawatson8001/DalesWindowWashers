@@ -15,6 +15,11 @@
                 {% for post in posts %}
                     <tr>
                         <th>{{ post.content }}</th>
+                        {% if user.is_superuser %}
+                            <th><a href="{% url 'delete_comment' post.id %}">
+                                <button type="submit" class="btn btn-info">Delete</button>
+                            </a></th>
+                        {% endif %}
                     </tr>
                     <tr>
                         <th>{{ post.user }}</th>

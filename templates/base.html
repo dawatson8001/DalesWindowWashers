@@ -6,9 +6,10 @@
 	<title>Dale's Window Washers</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/cerulean/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "js/timer.js" %}">
 {% block head_js %}{% endblock head_js %}
 </head>
-<body>
+<body onload="startTime()">
 	<section class="container">
         <img src="{%  static "images/Logo1.jpg" %}" alt="Dales Window Washers"/>
     </section>
@@ -35,10 +36,12 @@
             </ul>
         </nav>
         <p>You are logged in as {{ user.email }}</p>
+        <p id="clock"></p>
     </nav>
     {%  block content %}
     {% endblock %}
 
+    <script src="{% static "js/timer.js" %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 

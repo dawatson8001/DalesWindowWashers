@@ -15,7 +15,7 @@ def register(request):
         if form.is_valid():
             form.save()
 
-            user = auth.authenticate(email=request.POST.get('email'), password=request.POST.get('password'))
+            user = auth.authenticate(email=request.POST.get('email'), password=request.POST.get('password1'))
 
             if user:
                 messages.success(request, "You have successfully registered")
@@ -23,7 +23,6 @@ def register(request):
 
             else:
                 messages.error(request, "unable to log you in at this time!")
-
     else:
         form = UserRegistrationForm()
 

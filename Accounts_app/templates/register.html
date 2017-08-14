@@ -3,10 +3,10 @@
 {% block content %}
     <section class="container">
         <article class="col-xs-12">
-            <form role="form" method="POST" action="{% url 'register' %}">
+            <form role="form" method="post" action="{% url 'register' %}">
                 <legend>Create a new account</legend>
                 {% csrf_token %}
-                {{ form | as_bootstrap }}
+                {{ form| as_bootstrap }}
                 <section class="form-group">
                     <button type="submit" class="btn btn-primary">Create account</button>
                 </section>

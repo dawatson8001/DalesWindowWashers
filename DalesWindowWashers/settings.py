@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'Accounts_app',
     'emoticons',
     'tinymce',
-    'disqus'
+    'disqus',
 ]
 
 MIDDLEWARE = [
