@@ -19,7 +19,7 @@ class RegisterPageTest(TestCase):
 
     def test_check_content_is_correct(self):
         register_page = self.client.get('/register/')
-        self.assertTemplateUsed(register_page, "register.html", "base.html")
+        self.assertTemplateUsed(register_page, "register.html")
         register_page_template_output = render_to_response("register.html").content
         self.assertEqual(register_page.content, register_page_template_output)
 
@@ -34,7 +34,7 @@ class RegisterPageTest(TestCase):
 
 class LoginPageTest(TestCase):
     def test_login_Page_resolves(self):
-        login_page = resolve('/login')
+        login_page = resolve('/login/')
         self.assertEqual(login_page.func, login)
 
     def test_login_page_status_code_is_ok(self):
@@ -43,7 +43,7 @@ class LoginPageTest(TestCase):
 
     def test_check_content_is_correct(self):
         login_page = self.client.get('/login/')
-        self.assertTemplateUsed(login_page, "login.html", "base.html")
+        self.assertTemplateUsed(login_page, "login.html")
         login_page_template_output = render_to_response("login.html").content
         self.assertEqual(login_page.content, login_page_template_output)
 
@@ -63,7 +63,7 @@ class LogoutPageTest(TestCase):
 
     def test_logout_page_status_code_is_ok(self):
         logout_page = self.client.get('/logout/')
-        self.assertEqual(logout_page.status_code, 200)
+        self.assertEqual(logout_page.status_code, 302)
 
     def setUp(self):
         super(LogoutPageTest, self).setUp()
@@ -85,7 +85,7 @@ class AccountPageTest(TestCase):
 
     def test_check_content_is_correct(self):
         account_page = self.client.get('/account/')
-        self.assertTemplateUsed(account_page, "account.html", "base.html")
+        self.assertTemplateUsed(account_page, "account.html")
         account_page_template_output = render_to_response("account.html").content
         self.assertEqual(account_page.content, account_page_template_output)
 

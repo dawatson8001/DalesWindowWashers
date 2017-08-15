@@ -19,7 +19,7 @@ class HomePageTest(TestCase):
 
     def test_check_content_is_correct(self):
         home_page = self.client.get('/')
-        self.assertTemplateUsed(home_page, "index.html", "base.html")
+        self.assertTemplateUsed(home_page, "base.html", "index.html")
         home_page_template_output = render_to_response("index.html").content
         self.assertEqual(home_page.content, home_page_template_output)
 
@@ -43,7 +43,7 @@ class AboutUsPageTest(TestCase):
 
     def test_check_content_is_correct(self):
         aboutus_page = self.client.get('/AboutUs')
-        self.assertTemplateUsed(aboutus_page, "AboutUs.html", "base.html")
+        self.assertTemplateUsed(aboutus_page, "AboutUs.html")
         aboutus_page_template_output = render_to_response("AboutUs.html").content
         self.assertEqual(aboutus_page.content, aboutus_page_template_output)
 

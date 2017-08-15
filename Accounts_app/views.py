@@ -7,13 +7,9 @@ from django.core.urlresolvers import reverse
 from django.template.context_processors import csrf
 from Accounts_app.forms import UserRegistrationForm, UserLoginForm, PersonalDetailsForm
 from django.contrib.auth.decorators import login_required
-from .models import User
 
 
 def register(request):
-    if User.objects.filter(username=request.username).exists():
-        messages.error(request, "Email already in use!")
-        return render(request, 'register.html')
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
@@ -26,7 +22,8 @@ def register(request):
                 return render(request, 'account.html', {'form': form})
 
             else:
-                messages.error(request, "unable to log you in at this time!")
+                form.add_error(None, "Email already registered")
+
     else:
         form = UserRegistrationForm()
 
@@ -44,8 +41,8 @@ def login(request):
 
             if user is not None:
                 auth.login(request, user)
-                messages.error(request, "You have successfully logged in")
-                return render(request, 'index.html')
+                messages.success(request, "You have successfully logged in")
+                return render(request, 'account.html')
             else:
                 form.add_error(None, "Your email or password was not recognised")
 

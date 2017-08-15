@@ -5,19 +5,7 @@ from django.core.exceptions import ValidationError
 
 
 class UserRegistrationForm(UserCreationForm):
-
-    MONTH_ABBREVIATIONS = [
-        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'June',
-        'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'
-    ]
-    MONTH_CHOICES = list(enumerate(MONTH_ABBREVIATIONS, 1))
-    YEAR_CHOICES = [(i, i) for i in xrange(2015, 2036)]
-
-    credit_card_number = forms.CharField(label='Credit card number')
-    cvv = forms.CharField(label='Security code (CVV)')
-    expiry_month = forms.ChoiceField(label="Month", choices=MONTH_CHOICES)
-    expiry_year = forms.ChoiceField(label="Year", choices=YEAR_CHOICES)
-    stripe_id = forms.CharField(widget=forms.HiddenInput)
+    email = forms.EmailField()
     first_name = forms.CharField(label='Forename')
     last_name = forms.CharField(label='Surname')
     password1 = forms.CharField(
@@ -30,10 +18,9 @@ class UserRegistrationForm(UserCreationForm):
         widget=forms.PasswordInput
     )
 
-
     class Meta:
         model = User
-        fields = ['email', 'first_name', 'last_name', 'password1', 'password2', 'stripe_id']
+        fields = ['email', 'first_name', 'last_name', 'password1', 'password2']
         exclude = {'username'}
 
     def clean_password2(self):
@@ -45,6 +32,14 @@ class UserRegistrationForm(UserCreationForm):
             raise ValidationError(message)
 
         return password2
+
+    def clean_username(self, username):
+        user_model = self.usernmae
+        try:
+            user_model.objects.get(username_iexact=username)
+        except user_model.DoesNotExist:
+            return username
+        raise forms.ValidationError(_("This username has already been registered"))
 
     def save(self, commit=True):
         instance = super(UserRegistrationForm, self).save(commit=False)

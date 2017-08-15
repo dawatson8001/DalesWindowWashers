@@ -19,7 +19,7 @@ class CommentsPageTest(TestCase):
 
     def test_check_content_is_correct(self):
         comments_page = self.client.get('/comments/')
-        self.assertTemplateUsed(comments_page, "comments.html", "base.html")
+        self.assertTemplateUsed(comments_page, "comments.html")
         comments_page_template_output = render_to_response("comments.html").content
         self.assertEqual(comments_page.content, comments_page_template_output)
 
@@ -43,7 +43,7 @@ class NewCommentPageTest(TestCase):
 
     def test_check_content_is_correct(self):
         newcomment_page = self.client.get('/new_comment/')
-        self.assertTemplateUsed(newcomment_page, "newcomment.html", "base.html")
+        self.assertTemplateUsed(newcomment_page, "newcomment.html")
         newcomment_page_template_output = render_to_response("newcomment.html").content
         self.assertEqual(newcomment_page.content, newcomment_page_template_output)
 
@@ -67,8 +67,8 @@ class UserCommentPageTest(TestCase):
 
     def test_check_content_is_correct(self):
         usercomments_page = self.client.get('/usercomments/')
-        self.assertTemplateUsed(usercomments_page, "usercomments.html", "base.html")
-        usercomments_page_template_output = render_to_response("usercomments.html").content
+        self.assertTemplateUsed(usercomments_page, "usercomments")
+        usercomments_page_template_output = render_to_response("usercomments").content
         self.assertEqual(usercomments_page.content, usercomments_page_template_output)
 
     def setUp(self):
@@ -86,7 +86,7 @@ class UserCommentsEditPageTest(TestCase):
         self.assertEqual(usercommentsedit_page.func, edit_comment)
 
     def test_usercommentsedit_page_status_code_is_ok(self):
-        usercommentsedit_page = self.client.get('/AboutUs')
+        usercommentsedit_page = self.client.get('/usercomments/')
         self.assertEqual(usercommentsedit_page.status_code, 200)
 
     def setUp(self):
@@ -105,7 +105,7 @@ class DeletePageTest(TestCase):
 
     def test_delete_page_status_code_is_ok(self):
         delete_page = self.client.get('/post/delete//')
-        self.assertEqual(delete_page.status_code, 200)
+        self.assertEqual(delete_page.status_code, 302)
 
     def setUp(self):
         super(DeletePageTest, self).setUp()

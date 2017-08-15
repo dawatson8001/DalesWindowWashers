@@ -16,7 +16,8 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 import views
-import Comments_app.views
+from paypal.standard.ipn import urls as paypal_urls
+from Paypal_app import views as paypal_views
 
 
 urlpatterns = [
@@ -25,6 +26,9 @@ urlpatterns = [
     url(r'^AboutUs$', views.aboutus, name='aboutus'),
     url(r'', include('Comments_app.urls')),
     url(r'', include('Accounts_app.urls')),
+    url(r'^a-very-hard-to-guess-url/', include(paypal_urls)),
+    url(r'^paypal-return', paypal_views.paypal_return),
+    url(r'^paypal-cancel', paypal_views.paypal_cancel),
 
 
 ]
