@@ -142,8 +142,6 @@ USE_TZ = True
 
 AUTH_USER_MODEL = 'Accounts_app.User'
 
-DISABLE_COLLECTSTATIC=1
-
 TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", 'js', 'tinymce', 'tinymce.min.js')
 
 # Static files (CSS, JavaScript, Images)
