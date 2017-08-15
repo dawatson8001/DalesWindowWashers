@@ -29,7 +29,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
 STATICFILES_DIRS = (
@@ -141,7 +140,6 @@ USE_TZ = True
 
 AUTH_USER_MODEL = 'Accounts_app.User'
 
-TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", 'js', 'tinymce', 'tinymce.min.js')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
