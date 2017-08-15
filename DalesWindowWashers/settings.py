@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "staticfiles", 'js', 'tinymce', 'tinymce.min.js')
-
+STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
