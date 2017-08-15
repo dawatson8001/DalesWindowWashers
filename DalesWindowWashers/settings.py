@@ -29,12 +29,13 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
-STATIC_URL = '/static/'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, 'static'),
 )
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -139,8 +140,6 @@ USE_L10N = True
 USE_TZ = True
 
 AUTH_USER_MODEL = 'Accounts_app.User'
-
-heroku config:set DISABLE_COLLECTSTATIC=1
 
 TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", 'js', 'tinymce', 'tinymce.min.js')
 
