@@ -23,19 +23,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'y&)wtg2ydn&rnu^3d^$no)d!wbzs3)31mo1f*c%@fk97im5=%s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
 
 # Application definition
 
-
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "staticfiles", 'js', 'tinymce', 'tinymce.min.js')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -140,6 +139,9 @@ USE_L10N = True
 USE_TZ = True
 
 AUTH_USER_MODEL = 'Accounts_app.User'
+
+
+TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", 'js', 'tinymce', 'tinymce.min.js')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
