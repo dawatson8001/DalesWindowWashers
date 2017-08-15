@@ -120,8 +120,8 @@ AUTHENTICATION_BACKENDS = (
 )
 
 # PayPal Settings
-SITE_URL = 'http://127.0.0.1:8000'
-PAYPAL_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
+SITE_URL = 'https://morning-escarpment-70084.herokuapp.com/'
+PAYPAL_NOTIFY_URL = 'https://morning-escarpment-70084.herokuapp.com//a-very-hard-to-guess-url/'
 PAYPAL_RECEIVER_EMAIL = '<dynamitedave1-facilitator_api1.hotmail.co.uk>'
 
 # Internationalization
