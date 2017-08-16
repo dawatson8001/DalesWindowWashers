@@ -13,12 +13,10 @@ SITE_ID = 2
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'django.contrib.flatpages',
     'django_forms_bootstrap',
     'paypal.standard.ipn',
     'tinymce',
@@ -44,7 +42,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 ]
 
 ROOT_URLCONF = 'DalesWindowWashers.urls'
@@ -52,7 +49,7 @@ ROOT_URLCONF = 'DalesWindowWashers.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, '../../templates')],
+        'DIRS': [os.path.join(BASE_DIR, '/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -92,7 +89,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = ''
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "../../static"),
+    os.path.join(BASE_DIR, "/static"),
 )
 
 TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "../../static", "js",
