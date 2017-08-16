@@ -13,6 +13,8 @@ SITE_ID = 2
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.auth.models.Permission',
+    'django.contrib.auth.models.Group',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
