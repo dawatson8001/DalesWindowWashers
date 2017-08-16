@@ -19,8 +19,8 @@ import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', views.index, name='index'),
-    url(r'^AboutUs$', views.aboutus, name='aboutus'),
+    url(r'^/$', views.index, name='index'),
+    url(r'^/AboutUs/$', views.aboutus, name='aboutus'),
     url(r'', include('Comments_app.urls')),
     url(r'', include('Accounts_app.urls')),
     url(r'', include('Paypal_app.urls')),
