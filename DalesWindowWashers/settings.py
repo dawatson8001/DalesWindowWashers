@@ -14,7 +14,7 @@ STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
 
 STATICFILES_DIRS = (
 
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'DalesWindowWashers/static'),
 )
 
 INSTALLED_APPS = [
@@ -124,4 +124,4 @@ USE_TZ = True
 
 AUTH_USER_MODEL = 'Accounts_app.User'
 
-TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", 'js', 'tinymce', 'tinymce.min.js')
+TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "DalesWindowWashers/static", 'js', 'tinymce', 'tinymce.min.js')
