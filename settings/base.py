@@ -6,7 +6,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: Enter your own SECRET_KEY here
 SECRET_KEY = 'y&)wtg2ydn&rnu^3d^$no)d!wbzs3)31mo1f*c%@fk97im5=%s'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://morning-escarpment-70084.herokuapp.com']
 SITE_ID = 2
 
 # Application definition
@@ -88,7 +88,7 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-STATIC_URL = 'https://morning-escarpment-70084.herokuapp.com/static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
 
 STATICFILES_DIRS = (
