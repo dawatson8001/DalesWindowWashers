@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'Comments_app',
     'Accounts_app',
     'Products_app',
-    'static',
 ]
 
 AUTH_USER_MODEL = 'Accounts_app.User'
