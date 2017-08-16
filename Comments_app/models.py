@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 from django.db import models
-from DalesWindowWashers import settings
 from tinymce.models import HTMLField
+
+import settings
 
 
 class Post(models.Model):
