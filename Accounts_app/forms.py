@@ -33,6 +33,14 @@ class UserRegistrationForm(UserCreationForm):
 
         return password2
 
+    def clean_username(self, username):
+        user_model = self.usernmae
+        try:
+            user_model.objects.get(username_iexact=username)
+        except user_model.DoesNotExist:
+            return username
+        raise forms.ValidationError(_("This username has already been registered"))
+
     def save(self, commit=True):
         instance = super(UserRegistrationForm, self).save(commit=False)
 
