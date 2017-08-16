@@ -22,7 +22,7 @@ def register(request):
                 return render(request, 'account.html', {'form': form})
 
             else:
-                form.add_error(None, "Email already registered")
+                messages.error(request, "Email already registered")
 
     else:
         form = UserRegistrationForm()
