@@ -6,7 +6,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: Enter your own SECRET_KEY here
 SECRET_KEY = 'y&)wtg2ydn&rnu^3d^$no)d!wbzs3)31mo1f*c%@fk97im5=%s'
 
-ALLOWED_HOSTS = ['https://git.heroku.com/morning-escarpment-70084.git']
+ALLOWED_HOSTS = ['git.heroku.com/morning-escarpment-70084.git']
 SITE_ID = 2
 
 # Application definition
@@ -89,6 +89,8 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '../static/'
+
+STATIC_ROOT = ''
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "../static"),
