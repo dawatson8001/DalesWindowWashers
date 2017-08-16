@@ -1,2 +1,2 @@
--r base.txt
+-r requirements/staging.txt
 django-debug-toolbar
