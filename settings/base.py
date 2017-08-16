@@ -13,11 +13,12 @@ SITE_ID = 2
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.contenttypes',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django.contrib.flatpages',
     'django_forms_bootstrap',
     'paypal.standard.ipn',
     'tinymce',
@@ -43,7 +44,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware ',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'DalesWindowWashers.urls'
