@@ -2,39 +2,34 @@
 {% load bootstrap_tags %}
 {% load staticfiles %}
 {% block head_js %}
-  <script src="https://js.stripe.com/v2/" type="text/javascript"></script>
-  <script type="text/javascript">
-      Stripe.publishableKey = '{{ publishable }}';
-  </script>
-  <script type="text/javascript" src="{% static "js/stripe.js" %}"></script>
 {% endblock %}
 {% block content %}
     <section class="container">
         <article class="col-xs-12">
-                <legend>Personal details</legend>
+            <legend>Personal details</legend>
             <table>
-                    <tr>
-                        <th>Email address:{{ user.email }}</th>
-                    </tr>
-                    <tr>
-                        <th>First name:{{ user.first_name }}</th>
-                    </tr>
-                    <tr>
-                        <th>Last name:{{ user.last_name }}</th>
-                    </tr>
+                <tr>
+                    <th>Email address:{{ user.email }}</th>
+                </tr>
+                <tr>
+                    <th>First name:{{ user.first_name }}</th>
+                </tr>
+                <tr>
+                    <th>Last name:{{ user.last_name }}</th>
+                </tr>
             </table>
         </article>
     </section>
     <section class="container">
         <article class="col-xs-6">
-            <a href="{% url 'user_comments' %}"><button type="button" class="btn btn-primary">Comment</button></a>
+            <a href="{% url 'user_comments' %}">
+                <button type="button" class="btn btn-primary">Comment</button>
+            </a>
         </article>
         <article class="col-xs-6">
-            <a href="{% url 'products' %}"><button type="button" class="btn btn-primary">Make Payment</button></a>
-        </article>
-    </section>
-    <section class="container">
-        <article class="col-xs-12">
+            <a href="{% url 'products' %}">
+                <button type="button" class="btn btn-primary">Make Payment</button>
+            </a>
         </article>
     </section>
 {% endblock %}

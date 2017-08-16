@@ -95,6 +95,8 @@ class AccountPageTest(TestCase):
         super(AccountPageTest, self).setUp()
         self.user = User.objects.create(username='newuser')
         self.user.set_password('pass')
+        self.user.set_first_name('new')
+        self.user.set_last_name('user')
         self.user.save()
         self.login = self.client.login(username='newuser', password='pass')
         self.assertEqual(self.login, True)
