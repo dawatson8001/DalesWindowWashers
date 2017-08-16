@@ -6,7 +6,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: Enter your own SECRET_KEY here
 SECRET_KEY = 'y&)wtg2ydn&rnu^3d^$no)d!wbzs3)31mo1f*c%@fk97im5=%s'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['/morning-escarpment-70084.herokuapp.com/']
 SITE_ID = 2
 
 # Application definition
@@ -52,7 +52,7 @@ ROOT_URLCONF = 'DalesWindowWashers.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
