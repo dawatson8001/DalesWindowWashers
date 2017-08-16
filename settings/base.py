@@ -6,7 +6,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # SECURITY WARNING: Enter your own SECRET_KEY here
 SECRET_KEY = 'y&)wtg2ydn&rnu^3d^$no)d!wbzs3)31mo1f*c%@fk97im5=%s'
 
-ALLOWED_HOSTS = ['morning-escarpment-70084.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 SITE_ID = 2
 
 # Application definition
@@ -89,10 +89,10 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "/static"),
+    os.path.join(BASE_DIR, "static"),
 )
 
 TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", "js",
