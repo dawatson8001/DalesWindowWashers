@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.utils import timezone
+from django.contrib.auth.models import Group
 from django.db import models
 
 
