@@ -1,24 +1,24 @@
-Django	1.11.4
-arrow	0.7.0
-beautifulsoup4	4.4.1
-certifi	2017.4.17
-chardet	3.0.3
-click	6.7
-django-disqus	0.5
-django-emoticons	1.2
-django-forms-bootstrap	3.1.0
-django-paypal	0.3.6
-django-tinymce	2.6.0
-funcsigs	1.0.2
-gunicorn	19.7.1
-idna	2.5
-mock	2.0.0
-pbr	3.1.1
-pip	9.0.1
-python-dateutil	2.6.1
-pytz	2017.2
-requests	2.18.3
-setuptools	36.2.6
-six	1.10.0
-urllib3	1.22
-wheel	0.29.0
+Django==1.11.4
+arrow==0.7.0
+beautifulsoup4==4.4.1
+certifi==2017.4.17
+chardet==3.0.3
+click==6.7
+django-disqus==0.5
+django-emoticons==1.2
+django-forms-bootstrap==3.1.0
+django-paypal==0.3.6
+django-tinymce==2.6.0
+funcsigs==1.0.2
+gunicorn==19.7.1
+idna==2.5
+mock==2.0.0
+pbr==3.1.1
+pip==9.0.1
+python-dateutil==2.6.1
+pytz==2017.2
+requests==2.18.3
+setuptools==36.2.6
+six==1.10.0
+urllib3==1.22
+wheel==0.29.0	0.30.0a0

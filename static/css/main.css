@@ -11,7 +11,7 @@
 			margin: 0px;
 		}
 		#container {
-			background-color: transparent ;
+			background-color: lightblue ;
 			padding-bottom: 20px;
 		}
         .navbar {
@@ -27,7 +27,4 @@
 		}
 		p{
 			border-top: 50px;
-		}
-		table{
-			border:red;
 		}
