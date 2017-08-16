@@ -1,1 +1,1 @@
-web: gunicorn DalesWindowWashers:app
+web: gunicorn DalesWindowWashers.wsgi:application
