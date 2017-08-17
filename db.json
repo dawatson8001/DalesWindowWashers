@@ -41,18 +41,36 @@
 },
 {
     "model": "Accounts_app.user",
-    "pk": 1,
+    "pk": 32,
     "fields": {
-        "password": "admin",
+        "password": "pbkdf2_sha256$36000$sUiByHoNjFBJ$vOblE+qP6uGWGO99gFpCwRjl2EyhP97R4ZlB+M7Shkc=",
+        "last_login": "2017-08-17T22:19:17.234Z",
+        "is_superuser": false,
+        "username": "dave@dave.com",
+        "first_name": "dave",
+        "last_name": "watson",
+        "email": "dave@dave.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-08-17T22:19:01.663Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "Accounts_app.user",
+    "pk": 33,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$xmazlL61DAEp$+0MEOXGhFhzTBvADL4naYEDBnbehSZQvD8SRIuFVtAQ=",
         "last_login": null,
-        "is_superuser": true,
+        "is_superuser": false,
         "username": "admin@admin.com",
-        "first_name": "dr",
+        "first_name": "admin",
         "last_name": "admin",
         "email": "admin@admin.com",
         "is_staff": false,
         "is_active": true,
-        "date_joined": null,
+        "date_joined": "2017-08-17T22:20:03.076Z",
         "groups": [],
         "user_permissions": []
     }
