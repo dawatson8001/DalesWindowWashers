@@ -9,11 +9,11 @@ DATABASES = {
         'NAME':   'heroku_c29de6da34c32c7',
         'USER': 'b1176416fdcf8d',
         'PASSWORD': '238a5581',
-        'HOST': 'tcp(us-cdbr-iron-east-05.cleardb.net:3306)',
+        'HOST': 'tcp(us-cdbr-iron-east-05.cleardb.net)',
         'PORT': '3306',
     }}
 #DATABASES = {
-#    'default': dj_database_url.config('b1176416fdcf8d:238a5581@us-cdbr-iron-east-05.cleardb.net/heroku_c29de6da34c32c7')
+#    'default': dj_database_url.config('b1176416fdcf8d:238a5581@tcp(us-cdbr-iron-east-05.cleardb.net:3306)/heroku_c29de6da34c32c7')
 #}
 
 
