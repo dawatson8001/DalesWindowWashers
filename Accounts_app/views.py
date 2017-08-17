@@ -16,10 +16,11 @@ def register(request):
             form.save()
 
             user = auth.authenticate(email=request.POST.get('email'), password=request.POST.get('password1'))
+            auth.login(request, user)
 
             if user:
                 messages.success(request, "You have successfully registered")
-                return render(request, 'account.html', {'form': form})
+                return render(request, 'account.html')
 
             else:
                 messages.error(request, "Email already registered")
