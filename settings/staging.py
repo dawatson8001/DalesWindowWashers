@@ -13,6 +13,7 @@ DEBUG = False
 #        'PORT': '3306',
 #    }}
 
+DATABASES = {}
 DATABASES['default'] = dj_database_url.config()
 
 #DATABASES = {
