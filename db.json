@@ -1,45 +1,5 @@
 [
 {
-    "model": "Comments_app.post",
-    "pk": 3,
-    "fields": {
-        "content": "sdfdsfsf",
-        "created_date": "2017-08-11T00:24:40.372Z"
-    }
-},
-{
-    "model": "Comments_app.post",
-    "pk": 4,
-    "fields": {
-        "content": "hjyjh j 445",
-        "created_date": "2017-08-11T00:24:44.795Z"
-    }
-},
-{
-    "model": "Comments_app.post",
-    "pk": 5,
-    "fields": {
-        "content": "bobbjmcvfg hjil;cgf,",
-        "created_date": "2017-08-13T17:16:30.167Z"
-    }
-},
-{
-    "model": "Comments_app.post",
-    "pk": 6,
-    "fields": {
-        "content": "potato",
-        "created_date": "2017-08-13T23:56:06.171Z"
-    }
-},
-{
-    "model": "Comments_app.post",
-    "pk": 7,
-    "fields": {
-        "content": "Vicky is sexy!!!!!!",
-        "created_date": "2017-08-15T15:45:32.298Z"
-    }
-},
-{
     "model": "Accounts_app.user",
     "pk": 32,
     "fields": {
@@ -63,7 +23,7 @@
     "fields": {
         "password": "pbkdf2_sha256$36000$xmazlL61DAEp$+0MEOXGhFhzTBvADL4naYEDBnbehSZQvD8SRIuFVtAQ=",
         "last_login": null,
-        "is_superuser": false,
+        "is_superuser": true,
         "username": "admin@admin.com",
         "first_name": "admin",
         "last_name": "admin",
