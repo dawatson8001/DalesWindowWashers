@@ -11,7 +11,7 @@ class AccountUserManager(UserManager):
     def _create_user(self, username, email, password, is_staff, is_superuser, first_name, last_name, **extra_fields):
         now = timezone.now()
         if User.objects.filter(email=self.normalise_email(email)).exists():
-            raise ValueError('User already registered')
+            return
         if not email:
             raise ValueError('The given username must be set')
 
@@ -20,6 +20,8 @@ class AccountUserManager(UserManager):
                            is_active=True, is_superuser=is_superuser,
                            date_joined=now, first_name=first_name, last_name=last_name,
                            **extra_fields)
+        if User.objects.filter(email=self.normalise_email(email)).exists():
+            return
         user.set_password(password)
         user.save(using=self.__db)
 
