@@ -1,25 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
-    <section class="col-xs-12">
-    <table class="table" border="black">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Pay</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for product in products %}
+    <section class="container">
+        <article class="col-xs-12">
+            <table class="table">
+                <thead>
                 <tr>
-                    <td>{{ product.name }}</td>
-                    <td>{{ product.description }}</td>
-                    <td>£{{ product.price }}</td>
-                    <td>{{ product.paypal_form.sandbox }}</td>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Pay</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+                </thead>
+                <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td>{{ product.description }}</td>
+                        <td>£{{ product.price }}</td>
+                        <td>{{ product.paypal_form.sandbox }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </article>
     </section>
 {% endblock %}
