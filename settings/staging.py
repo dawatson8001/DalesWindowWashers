@@ -12,9 +12,12 @@ DEBUG = False
 #        'HOST': 'us-cdbr-iron-east-05.cleardb.net',
 #        'PORT': '3306',
 #    }}
-DATABASES = {
-    'default': dj_database_url.config('czsxgzxsffmciw:ab8c6f2f493abf6653b4aed94a9b1194c80b0112abb27c1e7f7640259983ccdc@ec2-107-22-211-182.compute-1.amazonaws.com:5432/d4e4ed0j43jfm5')
-}
+
+DATABASES['default'] = dj_database_url.config()
+
+#DATABASES = {
+#    'default': dj_database_url.config('czsxgzxsffmciw:ab8c6f2f493abf6653b4aed94a9b1194c80b0112abb27c1e7f7640259983ccdc@ec2-107-22-211-182.compute-1.amazonaws.com:5432/d4e4ed0j43jfm5')
+#}
 
 
 #DATABASES = {}
