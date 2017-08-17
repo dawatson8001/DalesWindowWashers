@@ -9,7 +9,7 @@ DATABASES = {
         'NAME':   'heroku_c29de6da34c32c7',
         'USER': 'b1176416fdcf8d',
         'PASSWORD': '238a5581',
-        'HOST': 'us-cdbr-iron-east-05.cleardb.net',
+        'HOST': 'tcp(us-cdbr-iron-east-05.cleardb.net:3306)',
         'PORT': '3306',
     }}
 #DATABASES = {
