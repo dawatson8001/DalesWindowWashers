@@ -3,12 +3,15 @@ from __future__ import unicode_literals
 
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.utils import timezone
+from django.contrib.auth.models import User
 from django.db import models
 
 
 class AccountUserManager(UserManager):
     def _create_user(self, username, email, password, is_staff, is_superuser, first_name, last_name, **extra_fields):
         now = timezone.now()
+        if User.objects.filter(email=self.normalise_email(email)).exists():
+            raise ValueError('User already registered')
         if not email:
             raise ValueError('The given username must be set')
 
