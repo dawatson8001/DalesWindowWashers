@@ -33,6 +33,15 @@ class UserRegistrationForm(UserCreationForm):
 
         return password2
 
+    def clean_email(self):
+        data = self.cleaned_data['email']
+        duplicate_users = User.objects.filter(email=data)
+        if self.instance.pk is not None:
+            duplicate_users = duplicate_users.exclude(pk=self.instance.pk)
+        if duplicate_users.exists():
+                raise forms.ValidationError("Email already registered!")
+        return data
+
     def save(self, commit=True):
         instance = super(UserRegistrationForm, self).save(commit=False)
 
