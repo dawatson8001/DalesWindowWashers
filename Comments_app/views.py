@@ -21,8 +21,8 @@ def post_list(request):
 
 
 @login_required
-def new_comment(request):
-
+def new_comment(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
     if request.method == "POST":
         form = CommentPostForm(request.POST)
         if form.is_valid():
@@ -42,7 +42,7 @@ def edit_comment(request, post_id):
         form = CommentPostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             post = form.save(commit=False)
-            post.author = request.user
+            post.user = request.user
             post.created_date = timezone.now()
             post.save()
             return redirect(post_user_list)
