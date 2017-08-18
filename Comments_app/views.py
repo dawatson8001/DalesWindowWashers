@@ -21,17 +21,16 @@ def post_list(request):
 
 
 @login_required
-def new_comment(request, post_id):
-    post = get_object_or_404(Post, pk=post_id)
+def new_comment(request):
     if request.method == "POST":
-        form = CommentPostForm(request.POST, instance=post)
+        form = CommentPostForm(request.POST)
         if form.is_valid():
             post = form.save(False)
             post.user = request.user
             post.save()
             return redirect(post_list)
     else:
-        form = CommentPostForm(instance=post)
+        form = CommentPostForm()
     return render(request, 'newcomment.html', {'form': form})
 
 
