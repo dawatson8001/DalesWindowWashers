@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from tinymce.models import HTMLField
-from Accounts_app.models import User
+from settings import base
 
 
 class Post(models.Model):
@@ -11,7 +11,7 @@ class Post(models.Model):
     class Meta:
         app_label = "Comments_app"
 
-    user = models.ForeignKey('Accounts_app.User')
+    user = models.ForeignKey(base.AUTH_USER_MODEL)
     content = HTMLField(blank=True)
     created_date = models.DateTimeField(auto_now_add=True)
 
