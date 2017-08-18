@@ -24,7 +24,7 @@ def post_list(request):
 def new_comment(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     if request.method == "POST":
-        form = CommentPostForm(request.POST)
+        form = CommentPostForm(request.POST, instance=post)
         if form.is_valid():
             post = form.save(False)
             post.user = request.user
