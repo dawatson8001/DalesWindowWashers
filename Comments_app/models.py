@@ -11,7 +11,7 @@ class Post(models.Model):
     class Meta:
         app_label = "Comments_app"
 
-    user = base.AUTH_USER_MODEL.id
+    user = models.ForeignKey(base.AUTH_USER_MODEL, related_name='posts')
     content = HTMLField(blank=True)
     created_date = models.DateTimeField(auto_now_add=True)
 
