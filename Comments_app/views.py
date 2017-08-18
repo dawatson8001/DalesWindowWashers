@@ -31,7 +31,7 @@ def new_comment(request, post_id):
             post.save()
             return redirect(post_list)
     else:
-        form = CommentPostForm()
+        form = CommentPostForm(instance=post)
     return render(request, 'newcomment.html', {'form': form})
 
 
