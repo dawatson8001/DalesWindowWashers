@@ -27,7 +27,7 @@ def new_comment(request):
         form = CommentPostForm(request.POST)
         if form.is_valid():
             post = form.save(False)
-            #post.user = request.user
+            post.user = request.user
             post.save()
             return redirect(post_list)
     else:
