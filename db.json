@@ -4,7 +4,7 @@
     "pk": 32,
     "fields": {
         "password": "pbkdf2_sha256$36000$sUiByHoNjFBJ$vOblE+qP6uGWGO99gFpCwRjl2EyhP97R4ZlB+M7Shkc=",
-        "last_login": "2017-08-17T22:19:17.234Z",
+        "last_login": "2017-08-18T00:36:13.111Z",
         "is_superuser": false,
         "username": "dave@dave.com",
         "first_name": "dave",
@@ -22,7 +22,7 @@
     "pk": 33,
     "fields": {
         "password": "pbkdf2_sha256$36000$xmazlL61DAEp$+0MEOXGhFhzTBvADL4naYEDBnbehSZQvD8SRIuFVtAQ=",
-        "last_login": "2017-08-17T23:24:35.089Z",
+        "last_login": "2017-08-17T23:56:49.664Z",
         "is_superuser": true,
         "username": "admin@admin.com",
         "first_name": "admin",
@@ -96,6 +96,17 @@
         "name": "Option 7",
         "description": "Conservatory full clean",
         "price": "6.00"
+    }
+},
+{
+    "model": "Comments_app.post",
+    "pk": 1,
+    "fields": {
+        "user": [
+            "dave@dave.com"
+        ],
+        "content": "I'm a happy customer!!",
+        "created_date": "2017-08-18T00:35:56.270Z"
     }
 }
 ]
