@@ -37,8 +37,8 @@
     - Django framework supplies the database where all customer comments and information is stored
 - [Discus]
     - We use discus and TinyMCE for the commenting text areas to offer greater choice of style to customers
-- [Stripe]
-    - We use Stripe to allow users to pay their bill online
+- [Paypal]
+    - We use Paypal to allow users to pay their bill online in a one off payment
 - [Python]
     - We use python to code the backend of the application
 
@@ -48,7 +48,7 @@
 1. Firstly you will need to clone this repository by running the ```git clone <https://github.com/dawatson8001/DalesWindowWashers>``` command
 2. Then you will need to install all the dependencies from the requirements files
 3. The code comes with sqlite3, if you want to review the database data directly you will need to download and install DB browser for SQLite
-4. Setup yourself through the admin APIView so your an admin user for the site
+4. Setup yourself through the admin APIView so your have an admin user for the site
 5. Run the site
 
 
