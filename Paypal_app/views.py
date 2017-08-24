@@ -8,10 +8,9 @@ from django.shortcuts import render
 @csrf_exempt
 def paypal_return(request):
     args = {'post': request.POST, 'get': request.GET}
-    return render(request, 'paypal/paypal_return.html', args)
+    return render(request, 'paypal-return.html', args)
 
 
 def paypal_cancel(request):
     args = {'post': request.POST, 'get': request.GET}
-    return render(request, 'paypal/paypal_cancel.html', args)
-
+    return render(request, 'paypal-cancel.html', args)
