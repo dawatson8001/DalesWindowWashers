@@ -3,12 +3,7 @@ import dj_database_url
 
 DEBUG = False
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        # 'NAME': os.path.join(BASE_DIR, '../../db.sqlite3'),
-    }
-}
+DATABASES = {}
 
 DATABASES['default'] = dj_database_url.config()
 
