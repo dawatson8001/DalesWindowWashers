@@ -91,5 +91,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
 
+
 TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "DalesWindowWashers/../static", "js",
                                "tinymce", "tinymce.min.js")
