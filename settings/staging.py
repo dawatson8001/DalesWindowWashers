@@ -3,7 +3,9 @@ import dj_database_url
 
 DEBUG = False
 
-DATABASES = {}
+DATABASES = {
+    'default': dj_database_url.config('CLEARDB_DATABASE_URL')
+}
 
 DATABASES['default'] = dj_database_url.config()
 
